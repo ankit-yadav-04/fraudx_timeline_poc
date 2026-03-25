@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+# Downloaded files
+download_files/
+workflow/jsons/
+workflow2/jsons/
+to_csv/all_xray_run_002/
+to_csv/workflow2/
+logs/
+new_pipe/
+rough_jsons/
