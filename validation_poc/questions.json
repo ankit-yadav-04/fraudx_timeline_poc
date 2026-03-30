@@ -1,0 +1,54 @@
+{
+    "questions": [
+      {
+        "question_number": 1,
+        "question_type": "Identity",
+        "question": "What is the full name of the patient/claimant?"
+      },
+      {
+        "question_number": 2,
+        "question_type": "Identity",
+        "question": "What is {patient_name} date of birth? What is {patient_name} gender?"
+      },
+      {
+        "question_number": 3,
+        "question_type": "Identity",
+        "question": "What is {patient_name} address or city of residence mentioned in the documents?"
+      },
+      {
+        "question_number": 4,
+        "question_type": "Incident",
+        "question": "What is the date of the alleged injury or incident involving {patient_name}?"
+      },
+      {
+        "question_number": 5,
+        "question_type": "Incident",
+        "question": "Where did the incident involving {patient_name} occur? (job site, address, employer location)"
+      },
+      {
+        "question_number": 6,
+        "question_type": "Incident",
+        "question": "What was {patient_name} doing at the time of the incident? (job role, task)"
+      },
+      {
+        "question_number": 7,
+        "question_type": "Incident",
+        "question": "Were there any witnesses to the incident involving {patient_name} mentioned in the documents?"
+      },
+      {
+        "question_number": 8,
+        "question_type": "Injuries",
+        "question": "What body parts of {patient_name} are claimed to be injured?"
+      },
+      {
+        "question_number": 9,
+        "question_type": "Injuries",
+        "question": "What is the nature of each claimed injury for {patient_name}? (fracture, tear, strain, herniation etc.)"
+      },
+      {
+        "question_number": 10,
+        "question_type": "Injuries",
+        "question": "Are any of {patient_name} injuries described as pre-existing or degenerative in any document?"
+      }
+    ]
+  }

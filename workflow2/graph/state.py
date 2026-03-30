@@ -13,6 +13,8 @@ class FraudTimelineWorkflow2State(BaseModel):
 
     # Optional prompt/config overrides
     prompt_step2_path: str | None = None
+    prompt_step2_5_path: str | None = None
+    patient_profile_step2_5_path: str | None = None
     prompt_step4_path: str | None = None
     prompt_step5_1_path: str | None = None
     prompt_step5_2_path: str | None = None
@@ -29,6 +31,12 @@ class FraudTimelineWorkflow2State(BaseModel):
     step1_outputs: list[str] = Field(default_factory=list)
     step2_outputs: list[str] = Field(default_factory=list)
     step2_failures: list[dict] = Field(default_factory=list)
+
+    step2_5_outputs: list[str] = Field(default_factory=list)
+    step2_5_failures: list[dict] = Field(default_factory=list)
+    total_keep: int = 0
+    total_reject: int = 0
+    total_dropped_empty: int = 0
 
     step3_output: str | None = None
     step4_output: str | None = None

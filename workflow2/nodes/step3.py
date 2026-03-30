@@ -88,6 +88,8 @@ def build_combined_output(input_files: List[str]) -> List[Dict[str, Any]]:
     for file_path in input_files:
         rows = load_json_list(file_path)
         for chunk_obj in rows:
+            if not _is_keep_chunk(chunk_obj):
+                continue
             combined.extend(split_chunk_by_date(chunk_obj))
 
     combined.sort(key=lambda item: parse_date_safe(item.get("date")))
@@ -100,8 +102,13 @@ def save_json(path: Path, payload: Any) -> None:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
 
+def _is_keep_chunk(chunk_obj: Dict[str, Any]) -> bool:
+    decision = str(chunk_obj.get("decision", "")).strip().upper()
+    return decision == "KEEP"
+
+
 def run_step3(
-    step2_outputs: List[str],
+    step2_5_outputs: List[str],
     run_label: str,
     output_dir: str = DEFAULT_OUTPUT_DIR,
     output_filename: str = DEFAULT_COMBINED_FILENAME,
@@ -109,7 +116,7 @@ def run_step3(
     """
     Build combined pass1-by-date artifact and return output path.
     """
-    combined = build_combined_output(step2_outputs)
+    combined = build_combined_output(step2_5_outputs)
 
     output_path = Path(output_dir) / run_label / output_filename
     save_json(output_path, combined)
@@ -120,22 +127,22 @@ def run_step3(
 async def step3_combine_by_date_node(state: Dict[str, Any]) -> Dict[str, Any]:
     """
     Expected state keys:
-    - step2_outputs: List[str]
+    - step2_5_outputs: List[str]
     - run_label: str (optional, defaults to "run")
     - output_dir: str (optional)
     - step3_output_filename: str (optional)
     """
-    step2_outputs = state.step2_outputs
+    step2_5_outputs = getattr(state, "step2_5_outputs", None) or []
     run_label = state.run_label
     output_dir = state.output_dir
     output_filename = state.step3_output_filename
 
-    if not isinstance(step2_outputs, list):
-        step2_outputs = []
+    if not isinstance(step2_5_outputs, list):
+        step2_5_outputs = []
 
     start_time = time.time()
     combined_output = run_step3(
-        step2_outputs=step2_outputs,
+        step2_5_outputs=step2_5_outputs,
         run_label=run_label,
         output_dir=output_dir,
         output_filename=output_filename,

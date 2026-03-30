@@ -6,11 +6,11 @@ from typing import Any, Dict, List
 
 INPUT_JSON_PATH = (
     "/home/ankit/smartsense_code/fraudx_timeline_poc/"
-    "workflow2/jsons/all_xray_run_workflow2_002_10/conflicts.json"
+    "workflow2/jsons/after_validation_01/conflicts.json"
 )
 OUTPUT_CSV_PATH = (
     "/home/ankit/smartsense_code/fraudx_timeline_poc/"
-    "to_csv/workflow2/conflicts_002_10.csv"
+    "to_csv/workflow2/conflicts_after_validation_01.csv"
 )
 
 

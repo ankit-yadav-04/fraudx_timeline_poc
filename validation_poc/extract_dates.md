@@ -237,7 +237,7 @@ context for a medical reviewer to understand the event without reading the sourc
 - **Whether this event is about the patient directly or being referenced/cited** 
   (e.g., "as noted in a prior report" or "referenced case from 2019")
 
-### Length: 1–3 sentences max. Factual. No opinions or interpretations.
+### Length: 2–4 sentences. Factual. No opinions or interpretations.
 Always include: the document type or source context this event came from (e.g., MRI report, 
 discharge summary, attorney letter), the patient name if explicitly mentioned in the chunk, 
 and any provider name, clinic, or facility referenced in the same chunk as the event.

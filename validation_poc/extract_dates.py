@@ -31,7 +31,11 @@ BATCH_SIZE = 5
 MAX_CONCURRENT_FILES = 8
 
 DEFAULT_PROMPT_PATH = (
-    "/home/ankit/smartsense_code/fraudx_timeline_poc/workflow2/prompts/extract_dates.md"
+    "/home/ankit/smartsense_code/fraudx_timeline_poc/validation_poc/extract_dates.md"
+)
+
+DEFAULT_OUTPUT_DIR = (
+    "/home/ankit/smartsense_code/fraudx_timeline_poc/validation_poc/date_extracted"
 )
 
 
@@ -125,12 +129,14 @@ def save_json(path: Path, payload: Any) -> None:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
 
-def pass1_output_path_from_pass0(pass0_path: str) -> Path:
+def pass1_output_path_from_pass0(pass0_path: str, output_dir: str) -> Path:
     p = Path(pass0_path)
     stem = p.stem
     if stem.endswith("_pass0"):
         stem = stem[:-6]
-    return p.with_name(f"{stem}_pass1.json")
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    return out_dir / f"{stem}_pass1.json"
 
 
 # =========================
@@ -141,7 +147,7 @@ def pass1_output_path_from_pass0(pass0_path: str) -> Path:
 def build_chain(prompt_path: str):
     prompt = ChatPromptTemplate.from_template(load_prompt_from_md(prompt_path))
     llm = ChatOpenAI(
-        model="gpt-4.1-mini",
+        model="gpt-5-nano",
         api_key=os.getenv("OPENAI_API_KEY"),
         temperature=0.1,
         model_kwargs={"response_format": {"type": "json_object"}},
@@ -429,11 +435,12 @@ async def process_file_with_limit(
     input_file: str,
     file_semaphore: asyncio.Semaphore,
     batch_semaphore: asyncio.Semaphore,
+    output_dir: str,
 ) -> Dict[str, Any]:
     async with file_semaphore:
         try:
             results = await process_document(chain, input_file, batch_semaphore)
-            output_path = pass1_output_path_from_pass0(input_file)
+            output_path = pass1_output_path_from_pass0(input_file, output_dir)
             save_json(output_path, [r.model_dump() for r in results])
             logger.info(f"Step2 saved {output_path}")
             return {"output": str(output_path), "failure": None}
@@ -448,6 +455,7 @@ async def process_file_with_limit(
 async def run_step2(
     input_files: List[str],
     prompt_path: str = DEFAULT_PROMPT_PATH,
+    output_dir: str = DEFAULT_OUTPUT_DIR,
 ) -> Dict[str, Any]:
     chain = build_chain(prompt_path)
 
@@ -461,7 +469,13 @@ async def run_step2(
     file_semaphore = asyncio.Semaphore(MAX_CONCURRENT_FILES)
 
     tasks = [
-        process_file_with_limit(chain, input_file, file_semaphore, batch_semaphore)
+        process_file_with_limit(
+            chain=chain,
+            input_file=input_file,
+            file_semaphore=file_semaphore,
+            batch_semaphore=batch_semaphore,
+            output_dir=output_dir,
+        )
         for input_file in input_files
     ]
     results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -502,3 +516,34 @@ async def step2_extract_dates_node(state: Dict[str, Any]) -> Dict[str, Any]:
     end_time = time.time()
     logger.info(f"Step2 completed in {end_time - start_time:.2f} seconds")
     return result
+
+
+if __name__ == "__main__":
+    # Standalone runner for Step2 only (pass0 -> pass1)
+
+    # Edit these as needed
+    input_dir = Path(
+        "/home/ankit/smartsense_code/fraudx_timeline_poc/workflow2/jsons/all_xray_run_workflow2_002_10"
+    )
+    prompt_path = "/home/ankit/smartsense_code/fraudx_timeline_poc/validation_poc/extract_dates.md"
+
+    # Pick all pass0 files in this run folder
+    input_files = sorted(str(p) for p in input_dir.glob("*_pass0.json"))
+
+    start = time.time()
+    result = asyncio.run(
+        run_step2(
+            input_files=input_files,
+            prompt_path=prompt_path,
+            output_dir="/home/ankit/smartsense_code/fraudx_timeline_poc/validation_poc/date_extracted",
+        )
+    )
+    end = time.time()
+
+    logger.info(f"Standalone Step2 completed in {end - start:.2f} seconds")
+    logger.info(f"Generated pass1 files: {len(result.get('step2_outputs', []))}")
+    logger.info(f"Failed files: {len(result.get('step2_failures', []))}")
+
+    # Optional concise console summary
+    print("Step2 outputs:", len(result.get("step2_outputs", [])))
+    print("Step2 failures:", len(result.get("step2_failures", [])))

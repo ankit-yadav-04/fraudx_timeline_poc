@@ -5,13 +5,10 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 
-INPUT_JSON_PATH = (
-    "/home/ankit/smartsense_code/fraudx_timeline_poc/"
-    "workflow2/jsons/all_xray_run_workflow2_002_10/pass2_output.json"
-)
+INPUT_JSON_PATH = "/home/ankit/smartsense_code/fraudx_timeline_poc/workflow2/jsons/after_validation_01/pass2_output.json"
 OUTPUT_CSV_PATH = (
     "/home/ankit/smartsense_code/fraudx_timeline_poc/"
-    "to_csv/workflow2/timeline_002_10.csv"
+    "to_csv/workflow2/timeline_after_validation_01.csv"
 )
 
 

@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "Identity",
+      "question": "What is the full name of the patient/claimant?",
+      "resolved_question": "What is the full name of the patient/claimant?",
+      "answer": "Erik M. Barrezueta-Orellana"
+    },
+    {
+      "question_number": 2,
+      "question_type": "Identity",
+      "question": "What is {patient_name} date of birth? What is {patient_name} gender?",
+      "resolved_question": "What is Erik M. Barrezueta-Orellana date of birth? What is Erik M. Barrezueta-Orellana gender?",
+      "answer": "Erik M. Barrezueta-Orellana's date of birth is August 12, 2001. His gender is male."
+    },
+    {
+      "question_number": 3,
+      "question_type": "Identity",
+      "question": "What is {patient_name} address or city of residence mentioned in the documents?",
+      "resolved_question": "What is Erik M. Barrezueta-Orellana address or city of residence mentioned in the documents?",
+      "answer": "Erik M. Barrezueta-Orellana's address or city of residence mentioned in the documents includes 53-20 Junction Blvd., 1st Floor, Elmhurst, NY 11373 and 102-2 Martense Ave, Queens, NY 11368."
+    },
+    {
+      "question_number": 4,
+      "question_type": "Incident",
+      "question": "What is the date of the alleged injury or incident involving {patient_name}?",
+      "resolved_question": "What is the date of the alleged injury or incident involving Erik M. Barrezueta-Orellana?",
+      "answer": "December 23, 2020"
+    },
+    {
+      "question_number": 5,
+      "question_type": "Incident",
+      "question": "Where did the incident involving {patient_name} occur? (job site, address, employer location)",
+      "resolved_question": "Where did the incident involving Erik M. Barrezueta-Orellana occur? (job site, address, employer location)",
+      "answer": "The incident involving Erik M. Barrezueta-Orellana occurred at the construction project located at 199 Lafayette Street, New York, NY 10012."
+    },
+    {
+      "question_number": 6,
+      "question_type": "Incident",
+      "question": "What was {patient_name} doing at the time of the incident? (job role, task)",
+      "resolved_question": "What was Erik M. Barrezueta-Orellana doing at the time of the incident? (job role, task)",
+      "answer": "Erik M. Barrezueta-Orellana was involved in construction-related activities including erection, demolition, repairing, altering, cleaning, or painting of buildings or structures at the construction project located at 199 Lafayette Street on December 23, 2020."
+    },
+    {
+      "question_number": 7,
+      "question_type": "Incident",
+      "question": "Were there any witnesses to the incident involving {patient_name} mentioned in the documents?",
+      "resolved_question": "Were there any witnesses to the incident involving Erik M. Barrezueta-Orellana mentioned in the documents?",
+      "answer": "NOT FOUND"
+    },
+    {
+      "question_number": 8,
+      "question_type": "Injuries",
+      "question": "What body parts of {patient_name} are claimed to be injured?",
+      "resolved_question": "What body parts of Erik M. Barrezueta-Orellana are claimed to be injured?",
+      "answer": "Neck, right shoulder, back, right knee, elbow, left knee/leg, right hip, thoracic spine, head/brain, right hand, abdominal wall."
+    },
+    {
+      "question_number": 9,
+      "question_type": "Injuries",
+      "question": "What is the nature of each claimed injury for {patient_name}? (fracture, tear, strain, herniation etc.)",
+      "resolved_question": "What is the nature of each claimed injury for Erik M. Barrezueta-Orellana? (fracture, tear, strain, herniation etc.)",
+      "answer": "Erik M. Barrezueta-Orellana's claimed injuries include: lumbar spine broad-based central disc herniations at L4-L5 and L5-S1, posterior annular disc bulges at L3-L4 and L4-L5, posterior subligamentous disc bulge at L5-S1, facet hypertrophic changes at L4-L5 and L5-S1, and straightening of lordosis; cervical spine bilateral foraminal disc herniations at C5-C6, disc bulges at C1-C5 and C6-C7, strain and straightening of lordosis, broad posterior disc herniation at C6-C7; right shoulder full-thickness tear of the acromioclavicular joint capsule with joint separation, supraspinatus and infraspinatus tendinitis, labral tear, impingement syndrome, hyperemic synovitis, bursitis, sprain; right knee longitudinal tear at the anterior root attachment of the medial meniscus with joint effusion, internal derangement, thickened plica with synovitis, grade II traumatic chondromalacia of the patella lateral facet, edema, sprain; left knee focal longitudinal tear at the anterior root attachment of the lateral meniscus with joint effusion, traumatic meniscus injury, internal derangement, sprain, synovitis, edema; thoracic spine tenderness and muscle spasm; right hip internal derangement, sprain; right elbow sprain; head/brain injuries including loss of consciousness, post-concussion syndrome, memory and cognitive dysfunction, closed head injury, bilateral tinnitus, blurred vision, depression, anxiety, post-traumatic headache, dizziness, insomnia, mood changes, photophobia, phonophobia; other injuries include myofascial pain syndrome, myalgia, right hand pain and weakness, abdominal pain and swelling, vertigo, post-traumatic stress disorder, and difficulty sleeping. No fractures were reported."
+    },
+    {
+      "question_number": 10,
+      "question_type": "Injuries",
+      "question": "Are any of {patient_name} injuries described as pre-existing or degenerative in any document?",
+      "resolved_question": "Are any of Erik M. Barrezueta-Orellana injuries described as pre-existing or degenerative in any document?",
+      "answer": "Yes. According to the defendants' assertions in the legal documents, Erik M. Barrezueta-Orellana pursued medical treatment for pre-existing degenerative conditions while claiming trauma-related injuries from the alleged accident."
+    }
+  ]
+}

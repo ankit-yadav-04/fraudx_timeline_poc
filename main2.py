@@ -16,11 +16,19 @@ logger.add("logs/workflow2_{time}.log", level="INFO", rotation="50 MB")
 final_state = asyncio.run(
     run_fraud_timeline_workflow2(
         input_raw_files=input_files,
-        run_label="all_xray_run_workflow2_002_10",
+        run_label="after_validation_01",
         output_dir="/home/ankit/smartsense_code/fraudx_timeline_poc/workflow2/jsons",
+        prompt_step2_5_path=(
+            "/home/ankit/smartsense_code/fraudx_timeline_poc/"
+            "workflow2/prompts/screening.md"
+        ),
+        patient_profile_step2_5_path=(
+            "/home/ankit/smartsense_code/fraudx_timeline_poc/"
+            "workflow2/prompts/patient_profile.txt"
+        ),
         prompt_step4_path=(
             "/home/ankit/smartsense_code/fraudx_timeline_poc/"
-            "new_pipe/final_timeline/prompt.md"
+            "workflow2/prompts/timeline_prompt.md"
         ),
         prompt_step5_1_path=(
             "/home/ankit/smartsense_code/fraudx_timeline_poc/"

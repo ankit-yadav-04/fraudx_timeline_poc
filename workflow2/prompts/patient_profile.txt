@@ -1,0 +1,34 @@
+PATIENT PROFILE
+===============
+
+IDENTITY
+Patient Name: Erik M. Barrezueta-Orellana
+Alternate Names: NOT FOUND
+Date of Birth: August 12, 2001
+Gender: Male
+Known Addresses: 53-20 Junction Blvd., 1st Floor, Elmhurst, NY 11373; 102-2 Martense Ave, Queens, NY 11368
+
+INCIDENT
+Incident Date: December 23, 2020
+Location: Construction project at 199 Lafayette Street, New York, NY 10012
+Activity at Time of Incident: Construction-related activities including erection, demolition, repairing, altering, cleaning, or painting of buildings or structures
+Employer at Time of Incident: NOT FOUND
+Reported to Employer: NOT FOUND
+Witnesses: NOT FOUND
+
+CLAIMED INJURIES
+Body Parts Affected: Neck, right shoulder, back, right knee, elbow, left knee/leg, right hip, thoracic spine, head/brain, right hand, abdominal wall
+
+Nature of Injuries:
+- Lumbar spine: Broad-based central disc herniations at L4-L5 and L5-S1, posterior annular disc bulges at L3-L4 and L4-L5, posterior subligamentous disc bulge at L5-S1, facet hypertrophic changes at L4-L5 and L5-S1, straightening of lordosis
+- Cervical spine: Bilateral foraminal disc herniations at C5-C6, disc bulges at C1-C5 and C6-C7, strain and straightening of lordosis, broad posterior disc herniation at C6-C7
+- Right shoulder: Full-thickness tear of the acromioclavicular joint capsule with joint separation, supraspinatus and infraspinatus tendinitis, labral tear, impingement syndrome, hyperemic synovitis, bursitis, sprain
+- Right knee: Longitudinal tear at the anterior root attachment of the medial meniscus with joint effusion, internal derangement, thickened plica with synovitis, grade II traumatic chondromalacia of the patella lateral facet, edema, sprain
+- Left knee: Focal longitudinal tear at the anterior root attachment of the lateral meniscus with joint effusion, traumatic meniscus injury, internal derangement, sprain, synovitis, edema
+- Thoracic spine: Tenderness and muscle spasm
+- Right hip: Internal derangement, sprain
+- Right elbow: Sprain
+- Head/brain: Loss of consciousness, post-concussion syndrome, memory and cognitive dysfunction, closed head injury, bilateral tinnitus, blurred vision, depression, anxiety, post-traumatic headache, dizziness, insomnia, mood changes, photophobia, phonophobia
+- Other: Myofascial pain syndrome, myalgia, right hand pain and weakness, abdominal pain and swelling, vertigo, post-traumatic stress disorder, difficulty sleeping
+
+Pre-Existing / Degenerative Flags: Yes. The patient pursued medical treatment for pre-existing degenerative conditions while claiming trauma-related injuries from the alleged accident.
